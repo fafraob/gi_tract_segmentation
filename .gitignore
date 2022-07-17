@@ -1,0 +1,6 @@
+data
+__pycache__
+venv
+weights
+umwgit/pretrained/mit_b2.pth
+umwgit/pretrained/ssformer_S.pth

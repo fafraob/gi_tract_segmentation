@@ -1,0 +1,59 @@
+// docker run --runtime nvidia --gpus all -v /home/user/dev/umwgit:/app -w /app umwgit /app/venv/umwgit/bin/python3 train.py
+{
+	"name": "umwgit",
+	"dockerFile": "Dockerfile",
+	"context": ".",
+	//"dockerComposeFile": ["docker-compose.yml", "docker-compose.extend.yml"],
+	//"service": "vscode_service",
+	//"workspaceMount": "source=${localWorkspaceFolder}/src,target=/workspace,type=bind,consistency=delegated",
+	//"workspaceFolder": "/workspace"
+	//"shutdownAction": "stopCompose",
+	//"runServices" : ["vscode_service"],
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"dotjoshjohnson.xml",
+		"laurenttreguier.uncrustify",
+		"ms-azuretools.vscode-docker",
+		"ms-python.python",
+		"ms-vscode.cpptools",
+		"redhat.vscode-yaml",
+		"smilerobotics.urdf",
+		"streetsidesoftware.code-spell-checker",
+		"twxs.cmake",
+		"yzhang.markdown-all-in-one"
+	],
+	"runArgs": [
+		// nvidia begin
+		"--runtime",
+		"nvidia",
+		"--gpus",
+		"all",
+		// nvidia end
+		"--cap-add=SYS_PTRACE",
+		"--security-opt",
+		"seccomp=unconfined",
+		"--privileged",
+		"-e",
+		"DISPLAY=${env:DISPLAY}",
+		"-e",
+		"QT_X11_NO_MITSHM=1",
+		"-e",
+		"XDG_RUNTIME_DIR=${env:XDG_RUNTIME_DIR}",
+		"-e",
+		"QT_X11_NO_MITSHM=1",
+		//"--net",
+		//"host",
+		"-v",
+		"/home/user/.Xauthority:/root/.Xauthority:rw",
+		"-v",
+		"/tmp/.X11-unix:/tmp/.X11-unix",
+		"--device=/dev:/dev"
+	],
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+	"postCreateCommand": ". .devcontainer/postCreateCommand.sh"
+}
