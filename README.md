@@ -11,7 +11,7 @@ I took this nice visualization from [here](https://www.kaggle.com/code/awsaf49/u
 
 ## Approach
 
-Here, I will explain my approach. Also, I will analyze what was missing to improve my model to reach the top spots. This analysis is only possible since the best competitors are nice enough to discuss their solutions in the [competition forum](https://www.kaggle.com/competitions/uw-madison-gi-tract-image-segmentation/discussion).
+Here, I will explain my approach and analyze what was missing to reach the top spots. This analysis is only possible since the best competitors are nice enough to discuss their solutions in the [competition forum](https://www.kaggle.com/competitions/uw-madison-gi-tract-image-segmentation/discussion).
 
 ### Model
 
@@ -34,7 +34,7 @@ I used the SS-Former-S, which is the version with fewer parameters. Moreover, [p
 - horizontal flip test time augmentation
 - 0.5 DiceLoss + 0.5 BCELoss
 
-### What's missing to the top places?
+### What was missing to the top places?
 
 - do the same thing I did for one model with several models and ensemble them
   - this is the **single most important point** (probably giving the largest boost)
