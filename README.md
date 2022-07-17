@@ -39,11 +39,11 @@ I used the SS-Former-S, which is the version with fewer parameters. Moreover, [p
 - do the same thing I did for one model with several models and ensemble them
   - this is the **single most important point** (probably giving the largest boost)
   - my SSFormer is already on par with single 2.5D models of the top solutions (when they were trained on all the data like mine) 🎉
-  - I also had a Unet (EfficientNet encoder) with similar (but slightly worse) performance than my SSformer, which I did not use (because I got tricked by the public leaderboard 😅)
+  - I also had an Unet (EfficientNet encoder) with similar (but slightly worse) performance than my SSformer, which I did not use (because I got tricked by the public leaderboard 😅)
   - an other example: by only adding an older version of my SSFormer ensemble to the whole ensemble, I could have ended up at rank 63 (I evaluated this ensemble but did not choose it for the final submission (because I got tricked by the public leaderboard again 😵😂))
 - use some kind of classifier to detect if the given slice has a non-zero mask or not (i.e. if stomach or intestines are shown on the image or not)
   - train this classifier (better also as ensemble) on the whole data
-  - then, train segmentation models only on the data containing masks so that it can fully focus on this task (since there was not too much data in this competition)
+  - then, train segmentation models only on the data containing masks so that they can fully focus on this task (since there was not too much data in this competition)
   - during inference, set mask to zero if the classifier says that there is no mask, otherwise use the segmentation models
 - many top teams also used 3D models, which performed very well, in their ensembles
 - in preprocessing, use a localizer to focus on the important parts of the image and to reduce the background
