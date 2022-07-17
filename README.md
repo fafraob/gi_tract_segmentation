@@ -16,7 +16,9 @@ Here, I will explain my approach. Also, I will analyze what was missing to impro
 ### Model
 
 As my model, I used the SSFormer from the paper [Stepwise Feature Fusion: Local Guides Global](https://arxiv.org/pdf/2203.03635v1.pdf). The encoder of this model comes from the [Segformer paper](https://arxiv.org/pdf/2105.15203.pdf) and is a transformer-based architecture that also incorporates CNN features.
+
 ![ssformer](misc/ssformer.png)
+
 I used the SS-Former-S, which is the version with fewer parameters. Moreover, [pretrained weights](https://drive.google.com/file/d/1CdX0K1_ZDMrEVGK2cmBfp33lYxLEBwlw/view) were used to initialize the model in the beginning.
 
 ### Settings
