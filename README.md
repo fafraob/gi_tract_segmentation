@@ -4,12 +4,10 @@ The goal of this competition ([competition link](https://www.kaggle.com/competit
 
 Using the code in this repo, I won a **bronze medal** in this competition and ranked in the top 7% of all contestants (107/1565). 🥉
 
-![Example.](misc/example_image.png)
-I took this nice visualization from [here](https://www.kaggle.com/code/awsaf49/uwmgi-unet-train-pytorch).
-
 This repository mainly exists so I can remember what I did in this competition and what I learned.
 
-[[_TOC_]]
+![Example.](misc/example_image.png)
+I took this nice visualization from [here](https://www.kaggle.com/code/awsaf49/uwmgi-unet-train-pytorch).
 
 ## Approach
 
