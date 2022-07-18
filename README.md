@@ -4,22 +4,22 @@ The goal of this competition ([competition link](https://www.kaggle.com/competit
 
 Using the code in this repo, I won a **bronze medal** in this competition and ranked in the top 7% of all contestants (107/1565). 🥉
 
-This repository mainly exists so I can remember what I did in this competition and what I learned.
+This repository mainly exists so I can remember what I learned in this competition.
 
 ![Example.](misc/example_image.png)
 I took this nice visualization from [here](https://www.kaggle.com/code/awsaf49/uwmgi-unet-train-pytorch).
 
 ## Approach
 
-Here, I will explain my approach and analyze what was missing to reach the top spots. This analysis is only possible since the best competitors are nice enough to discuss their solutions in the [competition forum](https://www.kaggle.com/competitions/uw-madison-gi-tract-image-segmentation/discussion).
+Here, I will explain my approach and analyze what was missing to reach the top spots. This analysis is only possible since the best competitors were nice enough to discuss their solutions in the [competition forum](https://www.kaggle.com/competitions/uw-madison-gi-tract-image-segmentation/discussion).
 
 ### Model
 
-As my model, I used the SSFormer from the paper [Stepwise Feature Fusion: Local Guides Global](https://arxiv.org/pdf/2203.03635v1.pdf). The encoder of this model comes from the [Segformer paper](https://arxiv.org/pdf/2105.15203.pdf) and is a transformer-based architecture that also incorporates CNN features.
+As my model, I used the SSFormer from the [Stepwise Feature Fusion: Local Guides Global](https://arxiv.org/pdf/2203.03635v1.pdf) paper. The encoder used in this model comes from the [Segformer paper](https://arxiv.org/pdf/2105.15203.pdf) and is a transformer-based architecture that also incorporates CNN properties.
 
 ![ssformer](misc/ssformer.png)
 
-I used the SS-Former-S, which is the version with fewer parameters. Moreover, [pretrained weights](https://drive.google.com/file/d/1CdX0K1_ZDMrEVGK2cmBfp33lYxLEBwlw/view) were used to initialize the model in the beginning.
+I used SSFormer-S, which is a SSFormer version with fewer parameters. Moreover, [pretrained weights](https://drive.google.com/file/d/1CdX0K1_ZDMrEVGK2cmBfp33lYxLEBwlw/view) were used to initialize the model in the beginning.
 
 ### Settings
 - 5 "stratified-group-fold" ensemble
