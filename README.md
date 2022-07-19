@@ -2,7 +2,7 @@
 
 The goal of this competition ([competition link](https://www.kaggle.com/competitions/uw-madison-gi-tract-image-segmentation/overview)) was to create a model that automatically **segments** the stomach and intestines on consecutive MRI scans.
 
-Using the code in this repo, I won a **bronze medal** in this competition and ranked in the top 7% of all contestants (107/1565). 🥉
+Using the code in this repo, I won a **bronze medal** in this competition and ranked in the top 7% of all contestants (103/1554). 🥉
 
 This repository mainly exists so I can remember what I learned in this competition.
 
