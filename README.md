@@ -38,9 +38,9 @@ I used SSFormer-S, which is a SSFormer version with fewer parameters. Moreover, 
 
 - do the same thing I did for one model with several models and ensemble them
   - this is the **single most important point** (probably giving the largest boost)
-  - my SSFormer is already on par with single 2.5D models of the top solutions (when they were trained on all the data like mine) 🎉
-  - I also had an Unet (EfficientNet encoder) with similar (but slightly worse) performance than my SSformer, which I did not use (because I got tricked by the public leaderboard 😅)
-  - an other example: by only adding an older version of my SSFormer ensemble to the whole ensemble, I could have ended up at rank 63 (I evaluated this ensemble but did not choose it for the final submission (because I got tricked by the public leaderboard again 😵😂))
+  - my SSFormer is already on par with single 2.5D models of the top solutions (when they were trained on all the data like mine)
+  - I also had an Unet (EfficientNet encoder) with similar (but slightly worse) performance than my SSformer, which I did not use (because I got tricked by the public leaderboard)
+  - an other example: by only adding an older version of my SSFormer ensemble to the whole ensemble, I could have ended up at rank 63 (I evaluated this ensemble but did not choose it for the final submission (because I got tricked by the public leaderboard again))
 - use some kind of classifier to detect if the given slice has a non-zero mask or not (i.e. if stomach or intestines are shown on the image or not)
   - train this classifier (better also as ensemble) on the whole data
   - then, train segmentation models only on the data containing masks so that they can fully focus on this task (since there was not too much data in this competition)
@@ -57,7 +57,6 @@ I used SSFormer-S, which is a SSFormer version with fewer parameters. Moreover, 
 
 ### Other tricks and notes that might be useful in future competitions
 - use 16 bit floating point precision to speed up training, inference and save gpu memory.
-- the public leaderboard is not your friend 👹 
 - Consider deep supervision loss 
   - i.e. compute loss already in middle parts of the architecture to give stronger signals
 - ensembles are important in general but especially in this competition since there wasn't to much data
